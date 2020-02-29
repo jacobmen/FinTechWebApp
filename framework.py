@@ -23,3 +23,13 @@ def one_part_ddm():
 def two_part_ddm():
     form = TwoPartDDNForm()
     return render_template("2PartDDN.html", form=form)
+
+@app.route("/process-one-part", methods=['POST'])
+def process_one_part_ddm():
+    #TODO: Process
+    pass
+
+@app.route("/process-two-part", methods=['POST'])
+def process_two_part_ddm():
+    #TODO: Process
+    pass
