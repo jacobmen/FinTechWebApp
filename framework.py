@@ -1,9 +1,9 @@
 from flask import Flask, render_template
-from config import DevelopmentConfig
+from config import Config
 
 app = Flask(__name__)
 # TODO: Change config for deployment later
-app.config.from_object(DevelopmentConfig)
+app.config.from_object(Config)
 
 if __name__ == "__main__":
     app.run()

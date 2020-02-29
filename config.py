@@ -1,19 +1,3 @@
-class BaseConfig(object):
-    '''
-    Base config class
-    '''
-    DEBUG = True
-    TESTING = False
-
-class ProductionConfig(BaseConfig):
-    """
-    Production specific config
-    """
-    DEBUG = False
-    
-class DevelopmentConfig(BaseConfig):
-    """
-    Development environment specific configuration
-    """
-    DEBUG = True
-    TESTING = True
+import os
+class Config(object):
+    SECRET_KEY = os.environ.get("SECRET_KEY") or "temp key"
