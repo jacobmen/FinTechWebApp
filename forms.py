@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, DecimalField, IntegerField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, DecimalField, IntegerField, ValidationError
 from wtforms.validators import DataRequired
 
 def input_is_valid(num_required_inputs):
@@ -21,7 +21,7 @@ def input_is_valid(num_required_inputs):
         if (form.int_rate.data):
             input_count = input_count + 1    
 
-        if (form.input_count < num_required_inputs):
+        if (input_count < num_required_inputs):
             raise ValidationError("Invalid Input")
 
     return _input_is_valid

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from config import Config
 from forms import DividendConstForm, TwoPartDDNForm
 
@@ -17,7 +17,7 @@ def landing_site():
 @app.route("/one-part-ddm", methods=['GET', 'POST'])
 def one_part_ddm():
     form = DividendConstForm()
-    if (form.validate_on_submit):
+    if (form.validate_on_submit()):
         return redirect("/process-one-part")
 
     return render_template("DividendConst.html", form=form)
@@ -25,7 +25,7 @@ def one_part_ddm():
 @app.route("/two-part-ddm", methods=['GET', 'POST'])
 def two_part_ddm():
     form = TwoPartDDNForm()
-    if (form.validate_on_submit):
+    if (form.validate_on_submit()):
         return redirect("/process-two-part")
 
     return render_template("2PartDDN.html", form=form)
