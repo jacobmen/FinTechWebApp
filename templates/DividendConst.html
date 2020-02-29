@@ -25,7 +25,8 @@
             <div class='image'></div>
         </div>
         <h1>Form Check</h1>
-        <form action="", method="post">
+        <form action="/process-one-part" method="post" nonvalidate>
+            {{ form.hidden_tag() }}
             <p>
                 {{ form.initial_dividend_value.label }}<br>
                 {{ form.initial_dividend_value(size=32) }}

@@ -27,15 +27,15 @@ def input_is_valid(num_required_inputs):
     return _input_is_valid
 
 class DividendConstForm(FlaskForm):
-    initial_dividend_value = DecimalField("Initial Dividend Value", validators=[input_is_valid(4)])
+    initial_dividend_value = DecimalField("Initial Dividend Value")#, validators=[input_is_valid(4)])
 
-    stock_length = IntegerField("Stock Length", validators=[input_is_valid(4)])
-    time_btn_pay = IntegerField("Time Between Payments", validators=[input_is_valid(4)])
+    stock_length = IntegerField("Stock Length")#, validators=[input_is_valid(4)])
+    time_btn_pay = IntegerField("Time Between Payments")#, validators=[input_is_valid(4)])
 
-    com_ratio = DecimalField("Common Ratio", validators=[input_is_valid(4)])
-    int_rate = DecimalField("Interest Rate", validators=[input_is_valid(4)])
+    com_ratio = DecimalField("Common Ratio")#, validators=[input_is_valid(4)])
+    int_rate = DecimalField("Interest Rate")#, validators=[input_is_valid(4)])
 
-    submit = SubmitField("Calculate", validators=[input_is_valid(4)])
+    submit = SubmitField("Calculate")#, validators=[input_is_valid(4)])
 
 class TwoPartDDNForm(FlaskForm):
     initial_dividend_value = DecimalField("Initial Dividend Value", validators=[input_is_valid(6)])

@@ -18,7 +18,7 @@ def landing_site():
 def one_part_ddm():
     form = DividendConstForm()
     if (form.validate_on_submit()):
-        return redirect("/process-one-part")
+        return redirect("/")
 
     return render_template("DividendConst.html", form=form)
 
@@ -26,7 +26,7 @@ def one_part_ddm():
 def two_part_ddm():
     form = TwoPartDDNForm()
     if (form.validate_on_submit()):
-        return redirect("/process-two-part")
+        return redirect("/")
 
     return render_template("2PartDDN.html", form=form)
 
