@@ -1,3 +1,3 @@
 import os
 class Config(object):
-    SECRET_KEY = os.environ.get("SECRET_KEY") or "temp key"
+    SECRET_KEY = os.environ.get("SECRET_KEY") or "clown"

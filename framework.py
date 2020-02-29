@@ -16,7 +16,8 @@ def landing_site():
 
 @app.route("/one-part-ddm", methods=['GET', 'POST'])
 def one_part_ddm():
-    return render_template("DividendConst.html")
+    form = DividendConstForm()
+    return render_template("DividendConst.html", form=form)
 
 @app.route("/two-part-ddm", methods=['GET', 'POST'])
 def two_part_ddm():
