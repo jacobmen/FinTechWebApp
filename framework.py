@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from config import DevelopmentConfig
+from forms import DividendConstForm, TwoPartDDNForm
 
 app = Flask(__name__)
 # TODO: Change config for deployment later
@@ -19,4 +20,5 @@ def one_part_ddm():
 
 @app.route("/two-part-ddm", methods=['GET', 'POST'])
 def two_part_ddm():
-    return render_template("2PartDDN.html")
+    form = TwoPartDDNForm()
+    return render_template("2PartDDN.html", form=form)
