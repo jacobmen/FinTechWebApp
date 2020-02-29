@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+    </head>
+    <style>
+        .header{
+            background-color: rgb(34, 85, 196);
+            text-align: center;
+            padding: 50px;
+        }
+        .image{
+            
+        }
+    </style>
+    <body>
+        {% block content %}
+        <div class='header'>
+            <h1 style="color:rgb(255, 255, 255); font-weight: 300;">Dividend Discount Model</h1>
+        </div>
+        <div class='container'>
+            <div class='image'></div>
+        </div>
+        <h1>Form Check</h1>
+        <form action="/process-one-part" method="post" nonvalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.initial_dividend_value.label }}<br>
+                {{ form.initial_dividend_value(size=32) }}
+            </p>
+            <p>
+                {{ form.stock_length.label }}<br>
+                {{ form.stock_length(size=32) }}
+            </p>
+            <p>
+                {{ form.time_btn_pay.label }}<br>
+                {{ form.time_btn_pay(size=32) }}
+            </p>
+            <p>
+                {{ form.com_ratio.label }}<br>
+                {{ form.com_ratio(size=32) }}
+            </p>
+            <p>
+                {{ form.int_rate.label }}<br>
+                {{ form.int_rate(size=32) }}
+            </p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+        {% endblock %}
+    </body>
+</html>
+
