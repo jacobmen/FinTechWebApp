@@ -17,11 +17,17 @@ def landing_site():
 @app.route("/one-part-ddm", methods=['GET', 'POST'])
 def one_part_ddm():
     form = DividendConstForm()
+    if (form.validate_on_submit):
+        return redirect("/process-one-part")
+
     return render_template("DividendConst.html", form=form)
 
 @app.route("/two-part-ddm", methods=['GET', 'POST'])
 def two_part_ddm():
     form = TwoPartDDNForm()
+    if (form.validate_on_submit):
+        return redirect("/process-two-part")
+
     return render_template("2PartDDN.html", form=form)
 
 @app.route("/process-one-part", methods=['POST'])
