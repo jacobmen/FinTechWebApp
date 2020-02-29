@@ -13,10 +13,10 @@ if __name__ == "__main__":
 def landing_site():
     return render_template("fintech.html")
 
-@app.route("/one-part-ddm")
+@app.route("/one-part-ddm", methods=['GET', 'POST'])
 def one_part_ddm():
     return render_template("DividendConst.html")
 
-@app.route("/two-part-ddm")
+@app.route("/two-part-ddm", methods=['GET', 'POST'])
 def two_part_ddm():
     return render_template("2PartDDN.html")

@@ -4,14 +4,12 @@ from wtforms.validators import DataRequired
 
 class DividendConstForm(FlaskForm):
     initial_dividend_value = DecimalField("Initial Dividend Value")
-    
     stock_length = IntegerField("Stock Length (1)")
-    
     time_btn_pay = IntegerField("Time Between Payments")
-
     com_ratio = DecimalField("Common Ratio (1)")
-
     int_rate = DecimalField("Interest Rate")
+
+    submit = SubmitField('Calculate')
 
 class TwoPartDDNForm(FlaskForm):
     initial_dividend_value = DecimalField("Initial Dividend Value")
@@ -25,3 +23,5 @@ class TwoPartDDNForm(FlaskForm):
     com_ratio_2 = DecimalField("Common Ratio (2)")
 
     int_rate = DecimalField("Interest Rate")
+
+    submit = SubmitField('Calculate')

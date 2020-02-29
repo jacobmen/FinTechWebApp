@@ -7,22 +7,40 @@
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <h1>Form Check</h1>
-    <form action="/action_page.php">
-        <label for="idv">Initial Dividend Value</label>
-        <input type="text" id="initial_dividend_value" name="idv"><br>
-        <label for="stocklength1">Length Of Stock 1</label>
-        <input type="text" id="stock_length_1" name="stocklength1"><br>
-        <label for="stocklength2">Length Of Stock 2</label>
-        <input type="text" id="stock_length_2" name="stocklength2"><br>
-        <label for="timeBtnPay">Time Button Payments</label>
-        <input type="text" id="time_btn_pay" name="timeBtnPay"><br>
-        <label for="comRatio1">Common Ratio 1</label>
-        <input type="text" id="com_ratio_1" name="comRatio1"><br>
-        <label for="comRatio2">Common Ratio 2</label>
-        <input type="text" id="com_ratio_2" name="comRatio2"><br>
-        <label for="intRate">Interest Rate</label>
-        <input type="text" id="int_rate" name="intRate"><br>
-        <input type="submit" value="Submit">
+    <form action="/action_page.php", method="post">
+        <p>
+            {{ form.initial_dividend_value.label }}<br>
+            {{ form.initial_dividend_value(size=32) }}
+        </p>
+        <p>
+            {{ form.stock_length_1.label }}<br>
+            {{ form.stock_length_1(size=32) }}
+        </p>
+        <p>
+            {{ form.stock_length_2.label }}<br>
+            {{ form.stock_length_2(size=32) }}
+        </p>
+        <p>
+            {{ form.time_btn_pay.label }}<br>
+            {{ form.time_btn_pay(size=32) }}
+        </p>
+        <p>
+            {{ form.com_ratio_1.label }}<br>
+            {{ form.com_ratio_1(size=32) }}
+        </p>
+        <p>
+            {{ form.com_ratio_2.label }}<br>
+            {{ form.com_ratio_2(size=32) }}
+        </p>
+        <p>
+            {{ form.int_rate.label }}<br>
+            {{ form.int_rate(size=32) }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
     </form>
+    {% endblock %}
 </body>
