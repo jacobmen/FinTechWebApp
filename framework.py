@@ -15,8 +15,8 @@ def landing_site():
 
 @app.route("/one-part-ddm")
 def one_part_ddm():
-    return "TEMP LANDING"
+    return render_template("DividendConst.html")
 
 @app.route("/two-part-ddm")
 def two_part_ddm():
-    return "TEMP LANDING"
+    return render_template("2PartDDN.html")
