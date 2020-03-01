@@ -36,7 +36,6 @@ def stockprice(dividend, payInterval, cRatio, irRate, stockLength):
 
 print(stockprice(5, 0.5, 2, 4, 10))
 
-
 # function to print the graph of price vs interest ratio
 # when holding the other params constant
 # param lowerIR - the lowest interest rate to be calculated (percent)
@@ -55,10 +54,9 @@ def graphIR(lowerIR, upperIR, dividend, payInterval, commonRatio, stockLength):
         plt.plot(i, graphValue,'-o')  # x-axis, then y-axisplt.xlabel('Interest Rate (percent)')  # labels x-axis
     plt.ylabel('Price (dollars)')  # labels y-axis
     plt.title(' Relationship Between Interest Rate and Price')  # title
-    #plt.xticks(range(lowerIR, upperIR+1))
     return (plt.show())
 
-#graphIR(10,50,5, 0.5, 2, 10)
+graphIR(10,50,5, 0.5, 2, 10)
 
 # function to print the graph of Price vs Dividend
 # when holding the other params constant
@@ -146,7 +144,6 @@ def graphStockLength(lowerSL,upperSL, dividend, payInterval, cRatio, irRate):
     plt.xlabel('Length of Stock (years)')  # labels x-axis
     plt.ylabel('Price (dollars)')  # labels y-axis
     plt.title(' Relationship Between Length of Stock and Price')  # title
-    #plt.xticks(range(lowerSL, upperSL + 1))
     return (plt.show())
 
 #graphStockLength(90,100,5,0.5,2,4)
