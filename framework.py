@@ -30,12 +30,12 @@ def two_part_ddm():
 
     return render_template("2PartDDN.html", form=form)
 
-@app.route("/process-one-part", methods=['POST'])
+@app.route("/process-one-part", methods=['GET', 'POST'])
 def process_one_part_ddm():
     #TODO: Process
     pass
 
-@app.route("/process-two-part", methods=['POST'])
+@app.route("/process-two-part", methods=['GET', 'POST'])
 def process_two_part_ddm():
     #TODO: Process
     pass
