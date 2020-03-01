@@ -28,7 +28,7 @@ def two_part_ddm():
     if (form.validate_on_submit()):
         return redirect("/process-two-part")
 
-    return render_template("2PartDDN.html", form=form)
+    return render_template("2PartDDM.html", form=form)
 
 @app.route("/process-one-part", methods=['GET', 'POST'])
 def process_one_part_ddm():
