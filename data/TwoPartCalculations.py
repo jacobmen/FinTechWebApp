@@ -1,7 +1,14 @@
 import pandas as pd
 
-#function that calculates price of stock when rate of increase
+# function that calculates price of stock when rate of increase
 # of dividends changes
+# param dividend - initial dividend value
+# param payInterval - time between payments, in years
+# param cRatio1 - first growth rate
+# param cRatio2 - second growth rate after change
+# param length1 - number of years with growth rate cRatio1
+# param length2 - number of years with growth rate cRatio2
+# param irRate - interest rate
 def twoPartDDM(dividend, payInterval, cRatio1, cRatio2, length1, length2, irRate):
     # hold the prices after certain intervals
     totalPrice1 = 0
@@ -26,9 +33,19 @@ def twoPartDDM(dividend, payInterval, cRatio1, cRatio2, length1, length2, irRate
     # loop through each payment and calculate the total price in interval 2
     for j in range(0, numPayments2,intervalInt):
         totalPrice2 = totalPrice2 + dividendAtChange * (commonR2 ** (j+1))/(interest ** float((j+1) * payInterval))
-    return totalPrice1 + totalPrice2
-print(round(twoPartDDM(5,0.5,2,5,2,2,4),2))
+    return round(totalPrice1 + totalPrice2,2)
 
+print(twoPartDDM(5,0.5,2,5,2,2,4))
+
+# function that calculates price of stock when interest rate
+# changes during the duration of stock payments
+# param dividend - initial dividend value
+# param payInterval - time between payments, in years
+# param cRatio1 - common ratio as a percent
+# param irRate1 - interest rate for first time interval, as a percent
+# param irRate2 - interest rate for second time interval, as a percent
+# param length1 - number of years with first interest rate
+# param length2 - number of years with second interest rate
 def twoPartIR(dividend, payInterval, cRatio, irRate1, irRate2, length1, length2):
     # hold the prices after certain intervals
     totalPrice1 = 0
@@ -53,5 +70,5 @@ def twoPartIR(dividend, payInterval, cRatio, irRate1, irRate2, length1, length2)
     # loop through each payment and calculate the total price in interval 2
     for j in range(0, numPayments2,intervalInt):
         totalPrice2 = totalPrice2 + dividendAtChange * (commonR ** (j+1))/(interest2 ** float((j+1) * payInterval))
-    return totalPrice1 + totalPrice2
-print(round(twoPartIR(5,1,5,2,5,2,2),2))
+    return round(totalPrice1 + totalPrice2,2)
+print(twoPartIR(5,1,5,2,5,2,2))
