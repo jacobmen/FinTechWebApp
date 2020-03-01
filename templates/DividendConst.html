@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Dividend Discount Model</title>
         
     </head>
     <style>
@@ -22,7 +22,9 @@
         margin-left: auto;
         margin-right: 45px;        
     }
-    form {
+    .container {
+        width: 250px;
+        height: 500px;
         border: 2px solid #0275d8;
         border-radius: 8px;
     }
@@ -33,7 +35,8 @@
         </div>
         <br>
         <img src="" alt="Graph" style= "width:35%"><br>
-        {% block content %}
+        <div class='container'>
+            {% block content %}
         <h1>Enter Inputs:</h1>
         <form action="" method="post" novalidate="novalidate">
             {{ form.hidden_tag() }}
@@ -62,6 +65,7 @@
             </p>
         </form>
         {% endblock %}
+        </div>
         <br>
         <br>
         <div class='footer'></div>
