@@ -31,12 +31,12 @@
     </style>
     <body>
         <div class='header'>
-            <h1 style="color:rgb(255, 255, 255);">Dividend Discount Model</h1>
+            <h1 style="color:rgb(124, 113, 113);">Dividend Discount Model</h1>
         </div>
         <br>
-        <img src="" alt="Graph" style= "width:35%"><br>
+        {% block content %}
+        <img src={{ graph }} alt="Graph" style= "width:35%"><br>
         <div class='container'>
-            {% block content %}
         <h1>Enter Inputs:</h1>
         <form action="" method="post" novalidate="novalidate">
             {{ form.hidden_tag() }}

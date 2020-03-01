@@ -20,16 +20,17 @@ def stockprice(dividend, payInterval, cRatio, irRate, stockLength):
     totalPrice = 0
     intervalInt = 1  # scaling # payments
 
-    rPayInterval = 1 / payInterval
-    numPayments = int(stockLength * rPayInterval)  # the # of payments
-    interest = (1 + irRate / 100)  # convert interest from percent to modifier
-    commonR = (1 + cRatio / 100)  # convert common ratio from percent to modifier
+    rPayInterval = 1 / float(payInterval)
+    numPayments = int(float(stockLength) * rPayInterval)  # the # of payments
+    interest = (1 + float(irRate) / 100)  # convert interest from percent to modifier
+    commonR = (1 + float(cRatio) / 100)  # convert common ratio from percent to modifier
 
     # loop through each payment and add the total price
     for i in range(1, numPayments+1, intervalInt):
-        totalPrice = totalPrice + dividend * (commonR ** (i-1) / (interest ** float(i*payInterval)))
+        totalPrice = totalPrice + float(dividend) * (commonR ** (i-1) / (interest ** float(i*float(payInterval))))
 
     # return rounded price
+    return (dividend)
     return round(totalPrice, 2)
 
 
@@ -47,8 +48,10 @@ print(stockprice(5, 0.5, 2, 4, 10))
 # param stockLength - the duration of the hold on the stock
 def graphIR(lowerIR, upperIR, dividend, payInterval, commonRatio, stockLength):
     # loop through all potential interest rates (0-100) and plot the values
+    
     for i in range(lowerIR, upperIR+1, 1):
         graphValue = stockprice(dividend, payInterval, commonRatio, i, stockLength)
+        #graphValue = stockprice(10, , 105, i, 10)
         plt.plot(i, graphValue,'-o')  # x-axis, then y-axisplt.xlabel('Interest Rate (percent)')  # labels x-axis
     plt.ylabel('Price (dollars)')  # labels y-axis
     plt.title(' Relationship Between Interest Rate and Price')  # title
