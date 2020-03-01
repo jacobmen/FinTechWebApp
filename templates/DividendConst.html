@@ -7,24 +7,34 @@
         
     </head>
     <style>
+        .footer{
+        background-color:#0275d8;
+        text-align: center;
+        padding: 50px;
+        }
         .header{
-            background-color: rgb(34, 85, 196);
+            background-color:#0275d8;
             text-align: center;
             padding: 50px;
         }
-        .image{
-            
-        }
+        .img{
+        display: block;
+        margin-left: auto;
+        margin-right: 45px;        
+    }
+    form {
+        border: 2px solid #0275d8;
+        border-radius: 8px;
+    }
     </style>
     <body>
-        {% block content %}
         <div class='header'>
-            <h1 style="color:rgb(255, 255, 255); font-weight: 300;">Dividend Discount Model</h1>
+            <h1 style="color:rgb(255, 255, 255);">Dividend Discount Model</h1>
         </div>
-        <div class='container'>
-            <div class='image'></div>
-        </div>
-        <h1>Form Check</h1>
+        <br>
+        <img src="" alt="Graph" style= "width:35%"><br>
+        {% block content %}
+        <h1>Enter Inputs:</h1>
         <form action="/process-one-part" method="post" nonvalidate>
             {{ form.hidden_tag() }}
             <p>
@@ -52,6 +62,9 @@
             </p>
         </form>
         {% endblock %}
+        <br>
+        <br>
+        <div class='footer'></div>
     </body>
 </html>
 
